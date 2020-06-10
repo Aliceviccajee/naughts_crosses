@@ -1,0 +1,104 @@
+/*styling the body and the visible elements so everything is centered */
+	body {
+		text-align: center;
+		margin-top: 100px;
+	}
+
+	h1 {
+		color: #6e0e95;
+		font-size: 70px;
+		margin-bottom: 20px;
+	}
+
+	.board {
+		width: 300px;
+		height: 300px;
+		margin: auto;
+		margin-top: 160px;
+		display: flex;
+		justify-content: center;
+	}
+
+	.cell {
+		cursor: pointer;
+		height: 40px;
+		border: solid black;
+		width: 40px;
+		margin: 10px 5px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.row {
+		display: inline-block;
+	}
+
+	/*	restyling default button */	
+	button {
+	  text-decoration: none;
+	  margin: 2px 0;
+	  outline: none;
+	  cursor: pointer;
+	  border: solid 1px transparent;
+	  border-radius: 4px;
+	  padding: 10px 10px;
+	  color: #ffffff;
+	  font-size: 20px;
+	  background-color: #9555af;
+	}
+
+  button:hover {
+  	background-color: #b19cd9;
+  	color: #9555af
+	}
+
+	.winning-message {
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin-left: auto;
+		margin-right: auto;
+		font-size: 40px;
+		z-index: 1;
+		color: purple;
+	}
+
+/* changing the cursor on cells with o or x class to make it obvious that once a cell 
+is taken it cannot be reused by another player */
+	.x, .o {
+		cursor: default;
+	}
+
+/* o and x styling and positioning */
+	.x:before, .x:after {
+	  background-color: blue;
+	  position: absolute;
+	  content: ' ';
+	  height: 33px;
+	  width: 2px;
+	}
+
+	.x:before {
+	  transform: rotate(45deg);
+	}
+
+	.x:after {
+	  transform: rotate(-45deg);
+	}
+
+	.o:before, .o:after {
+	  background-color: red;
+	  position: absolute;
+	  display: block;
+	  border-radius: 50%;
+	  width: 30px;
+	  height: 30px;
+	  content: '';
+	}
+
+/*class to add to the winning message when the game is reset */
+	.hide {
+		display: none;
+	}
+
